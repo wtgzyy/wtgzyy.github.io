@@ -1,0 +1,664 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/icon/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="小马哥哥">
+  <meta name="keywords" content="">
+  <title>IntelliJ IDEA 配置 (小马多年血泪沉淀下来的) - 羊山</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"xiaoma.cool","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":"67170173f7728b46e83d8bf815805a8b","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>羊 山</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/articleBg/1(6).jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="IntelliJ IDEA 配置 (小马多年血泪沉淀下来的)">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      小马哥哥
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-11-22 01:26" pubdate>
+        2020年11月22日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      12
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">IntelliJ IDEA 配置 (小马多年血泪沉淀下来的)</h1>
+            
+            <div class="markdown-body">
+              <p>作为一名程序猿，为了能够减缓秃头的旅程，</p>
+<p>我觉得一套好用的配置确实能够起到不小的作用。</p>
+<p>JAVA秃头人最常用的软件莫过于IDEA了。</p>
+<p>今天我就分享一下我这些年自己沉淀下来的一些配置。</p>
+<p>有其他好用配置的朋友，可以在下方留言呦！</p>
+<h2 id="1-忽略大小写开关"><a href="#1-忽略大小写开关" class="headerlink" title="1.忽略大小写开关"></a>1.忽略大小写开关</h2><blockquote>
+<p>写代码时，比如需要定义string类型变量，那么我们输入小写s的时候，idea默认是不会提示String的。这个设置就可以忽略掉大小写，输入小写s也可以提示String。</p>
+</blockquote>
+<p><img src="/img/articleContent/IDEASetting/ignoreMatchCase.png" srcset="/img/loading.gif" alt="忽略大小写开关"></p>
+<h2 id="2-取消单行显示tabs的操作"><a href="#2-取消单行显示tabs的操作" class="headerlink" title="2.取消单行显示tabs的操作"></a>2.取消单行显示tabs的操作</h2><blockquote>
+<p>如果我们打开的类过多，那么idea只会显示一行，之前打开的就不见了，下面这个设置就可以让我们打开的类都显示。</p>
+</blockquote>
+<p>先看下没设置之前，只能打开一行。</p>
+<p><img src="/img/articleContent/IDEASetting/showTabsInOneRowBefore.png" srcset="/img/loading.gif" alt="取消单行显示tabs的操作"></p>
+<p>再看下设置之后，打开的类分多行显示。</p>
+<p><img src="/img/articleContent/IDEASetting/showTabsInOneRowAfter.png" srcset="/img/loading.gif" alt="取消单行显示tabs的操作"></p>
+<p>设置方法。</p>
+<p><img src="/img/articleContent/IDEASetting/showTabsInOneRow.png" srcset="/img/loading.gif" alt="取消单行显示tabs的操作"></p>
+<h2 id="3-项目文件编码"><a href="#3-项目文件编码" class="headerlink" title="3.项目文件编码"></a>3.项目文件编码</h2><blockquote>
+<p>有时候，项目写着写着，就会遇到很烦的编码问题，我们把编码设置成下面这样，基本就可以杜绝这种情况了。</p>
+</blockquote>
+<p><img src="/img/articleContent/IDEASetting/fileEncodings.png" srcset="/img/loading.gif" alt="项目文件编码"></p>
+<h2 id="4-滚轴修改字体大小"><a href="#4-滚轴修改字体大小" class="headerlink" title="4.滚轴修改字体大小"></a>4.滚轴修改字体大小</h2><blockquote>
+<p>idea有默认的字体大小，也可以去设置，但是都不如用ctrl + 鼠标进行实时变大变小来的痛快。</p>
+</blockquote>
+<p><img src="/img/articleContent/IDEASetting/changeFontSizeWithCtrlMouse.png" srcset="/img/loading.gif" alt="滚轴修改字体大小"></p>
+<h2 id="5-设置显示行号和方法间的分隔符"><a href="#5-设置显示行号和方法间的分隔符" class="headerlink" title="5.设置显示行号和方法间的分隔符"></a>5.设置显示行号和方法间的分隔符</h2><blockquote>
+<p>idea默认不显示行号，方法之间也没有分隔线，我们可以照如下设置。</p>
+</blockquote>
+<p><img src="/img/articleContent/IDEASetting/showLineNumberAndMethodSeparators.png" srcset="/img/loading.gif" alt="设置显示行号和方法间的分隔符"></p>
+<p>设置之后的效果</p>
+<p><img src="/img/articleContent/IDEASetting/showLineNumberAndMethodSeparatorsAfter.png" srcset="/img/loading.gif" alt="设置显示行号和方法间的分隔符"></p>
+<h2 id="6-新建类头注释信息"><a href="#6-新建类头注释信息" class="headerlink" title="6.新建类头注释信息"></a>6.新建类头注释信息</h2><blockquote>
+<p>平时项目里都是协作开发，虽然我们在git记录里可以看到代码是谁写的，以及是干什么的。但是我们可以在新建类的时候，让idea自动帮我们生成作者以及描述等信息，这样就很直观的可以看到类的相关信息。</p>
+</blockquote>
+<p><img src="/img/articleContent/IDEASetting/fileHeaderInNewClass.png" srcset="/img/loading.gif" alt="新建类头注释信息"></p>
+<pre><code class="hljs elixir">/**
+    <span class="hljs-variable">@desc</span>   ...
+    <span class="hljs-variable">@date</span> <span class="hljs-variable">$&#123;</span>YEAR&#125;-<span class="hljs-variable">$&#123;</span>MONTH&#125;-<span class="hljs-variable">$&#123;</span>DAY&#125; <span class="hljs-variable">$&#123;</span>HOUR&#125;<span class="hljs-symbol">:</span><span class="hljs-variable">$&#123;</span>MINUTE&#125;<span class="hljs-symbol">:</span><span class="hljs-variable">$&#123;</span>SECOND&#125;
+    <span class="hljs-variable">@author</span> xiaoma
+*<span class="hljs-regexp">/</span></code></pre>
+
+<p>我刚新建了个类，我们看下，效果就是这样</p>
+<p><img src="/img/articleContent/IDEASetting/fileHeaderInNewClassAlfter.png" srcset="/img/loading.gif" alt="新建类头注释信息"></p>
+<h2 id="7-JavaDoc注释（就是方法上加的注释）"><a href="#7-JavaDoc注释（就是方法上加的注释）" class="headerlink" title="7.JavaDoc注释（就是方法上加的注释）"></a>7.JavaDoc注释（就是方法上加的注释）</h2><blockquote>
+<p>新建类有了注释，新建方法也可以生成注释，因为新建方法设置到参数、返回值等信息，大家照如下设置</p>
+</blockquote>
+<p><img src="/img/articleContent/IDEASetting/javaDocTemplates.png" srcset="/img/loading.gif" alt="JavaDoc注释"></p>
+<p><img src="/img/articleContent/IDEASetting/javaDocTemplates2.png" srcset="/img/loading.gif" alt="JavaDoc注释"></p>
+<pre><code class="hljs less">*
+ * <span class="hljs-variable">@desc</span> $description$
+ $params$
+ * <span class="hljs-variable">@return</span> $return$
+ *
+ * <span class="hljs-variable">@date</span> $date$ $time$
+ * <span class="hljs-variable">@author</span> xiaoma
+ */</code></pre>
+
+<p>params的值设置为</p>
+<pre><code class="hljs lsl">groovyScript(<span class="hljs-string">&quot;def result=&#x27;&#x27;; def params=<span class="hljs-subst">\&quot;</span>$&#123;_1&#125;<span class="hljs-subst">\&quot;</span>.replaceAll(&#x27;[<span class="hljs-subst">\\</span><span class="hljs-subst">\\</span>[|<span class="hljs-subst">\\</span><span class="hljs-subst">\\</span>]|<span class="hljs-subst">\\</span><span class="hljs-subst">\\</span>s]&#x27;, &#x27;&#x27;).split(&#x27;,&#x27;).toList(); for(i = 1; i &lt; params.size() +1; i++) &#123;result+=&#x27;* @param &#x27; + params[i - 1] + &#x27; &#x27; + i + ((i &lt; params.size()) ? &#x27;<span class="hljs-subst">\\</span>n &#x27; : &#x27;&#x27;)&#125;; return result&quot;</span>, methodParameters())</code></pre>
+
+<p>使用方法</p>
+<pre><code class="hljs plain">&#x2F;**+回车</code></pre>
+
+<p>我刚新建了个方法，在上面输入/**+回车之后的效果，大家看下</p>
+<p><img src="/img/articleContent/IDEASetting/javaDocTemplatesAlfter.png" srcset="/img/loading.gif" alt="JavaDoc注释"></p>
+<h2 id="8-Terminal中显示git命令行"><a href="#8-Terminal中显示git命令行" class="headerlink" title="8.Terminal中显示git命令行"></a>8.Terminal中显示git命令行</h2><blockquote>
+<p>idea的控制台默认是不能使用git命令的，这就使得我们很难受，给他设置一手</p>
+</blockquote>
+<p><img src="/img/articleContent/IDEASetting/terminalGit.png" srcset="/img/loading.gif" alt="Terminal中显示git命令行"></p>
+<pre><code class="hljs css">配置了<span class="hljs-selector-tag">git</span>中<span class="hljs-selector-tag">bash</span><span class="hljs-selector-class">.exe</span>的位置后，就可以在<span class="hljs-selector-tag">Terminal</span>中显示<span class="hljs-selector-tag">git</span>的命令框(默认是<span class="hljs-selector-tag">cmd</span><span class="hljs-selector-class">.exe</span>)，并且按<span class="hljs-selector-tag">Tab</span>可以提示命令</code></pre>
+
+<p><strong>然后出现不能使用ll以及发生中文乱码，解决如下：git路径改成下面这样就可以</strong></p>
+<pre><code class="hljs taggerscript"># 下面bash路径换成你自己bash的路径
+
+&quot;D:<span class="hljs-symbol">\a</span>pplication<span class="hljs-symbol">\G</span>it<span class="hljs-symbol">\G</span>it<span class="hljs-symbol">\b</span>in<span class="hljs-symbol">\b</span>ash.exe&quot; --login -i</code></pre>
+
+<p><img src="/img/articleContent/IDEASetting/terminalGit2.png" srcset="/img/loading.gif" alt="Terminal中显示git命令行"></p>
+<h2 id="9-取消注释-javadoc-param-中的检查报错"><a href="#9-取消注释-javadoc-param-中的检查报错" class="headerlink" title="9.取消注释(javadoc:@param)中的检查报错"></a>9.取消注释(javadoc:@param)中的检查报错</h2><blockquote>
+<p>我们方法上@param中参数名如果和方法参数不一致的话，idea默认直接红色报错，大家根据自己需要看要不要取消这个error提示</p>
+</blockquote>
+<p><img src="/img/articleContent/IDEASetting/cancleErrorInJavaDoc.png" srcset="/img/loading.gif" alt="取消注释(javadoc:@param)中的检查报错"></p>
+<h2 id="10-工具栏添加【新建类】和【新建包】图标-2020-11-26补充"><a href="#10-工具栏添加【新建类】和【新建包】图标-2020-11-26补充" class="headerlink" title="10.工具栏添加【新建类】和【新建包】图标(2020-11-26补充)"></a>10.工具栏添加【新建类】和【新建包】图标(2020-11-26补充)</h2><blockquote>
+<p>最近有朋友一直反馈这个，就添加一下，在工具栏直接可以新建类和新建图标，再也不用右键-&gt;new-&gt;……</p>
+</blockquote>
+<p><img src="/img/articleContent/IDEASetting/newClassAndDictory.png" srcset="/img/loading.gif" alt="新建类和新建图标"></p>
+<p><img src="/img/articleContent/IDEASetting/newClassAndDictory2.png" srcset="/img/loading.gif" alt="新建类和新建图标"></p>
+<h2 id="11-IDEA中配置数据库"><a href="#11-IDEA中配置数据库" class="headerlink" title="11.IDEA中配置数据库"></a>11.IDEA中配置数据库</h2><blockquote>
+<p>idea自带的数据库用起来十分友好，我推荐他是因为：它可以在不切换页面进行数据库操作，更重要的是他可以根据列名跳转，这个就比什么sqlYog、Navicat强大多了。说实话，用了她之后，我再也没有用过其他数据库工具。</p>
+</blockquote>
+<p>几个最常用的快捷键</p>
+<pre><code class="hljs mathematica"><span class="hljs-variable">Ctrl</span><span class="hljs-operator">+</span><span class="hljs-built_in">Enter</span>             ：执行<span class="hljs-variable">SQL</span> ，
+<span class="hljs-variable">Ctrl</span><span class="hljs-operator">+</span><span class="hljs-variable">Alt</span><span class="hljs-operator">+</span><span class="hljs-built_in">E</span>             ：显示最近执行过的<span class="hljs-variable">SQL</span> （超级实用）
+<span class="hljs-variable">Ctrl</span><span class="hljs-operator">+</span><span class="hljs-variable">F12</span> 或者 右击列名  ：定位到某行数据后，可以跳转到指定列（超级实用）
+</code></pre>
+
+<h3 id="1-新建数据库连接"><a href="#1-新建数据库连接" class="headerlink" title="1.新建数据库连接"></a>1.新建数据库连接</h3><p><img src="/img/articleContent/IDEASetting/database1.png" srcset="/img/loading.gif" alt="新建数据库连接"></p>
+<h3 id="2-配置数据库连接"><a href="#2-配置数据库连接" class="headerlink" title="2.配置数据库连接"></a>2.配置数据库连接</h3><p><img src="/img/articleContent/IDEASetting/database2.png" srcset="/img/loading.gif" alt="配置数据库连接"></p>
+<h3 id="3-页面介绍"><a href="#3-页面介绍" class="headerlink" title="3.页面介绍"></a>3.页面介绍</h3><p><img src="/img/articleContent/IDEASetting/database3.png" srcset="/img/loading.gif" alt="页面介绍"></p>
+<p><img src="/img/articleContent/IDEASetting/database4.png" srcset="/img/loading.gif" alt="页面介绍"></p>
+<h3 id="4-查询"><a href="#4-查询" class="headerlink" title="4.查询"></a>4.查询</h3><p><img src="/img/articleContent/IDEASetting/database5.png" srcset="/img/loading.gif" alt="查询"></p>
+<p><img src="/img/articleContent/IDEASetting/database6.png" srcset="/img/loading.gif" alt="查询"></p>
+<h2 id="联系博主，加入【羊山丨交流社区】"><a href="#联系博主，加入【羊山丨交流社区】" class="headerlink" title="联系博主，加入【羊山丨交流社区】"></a>联系博主，加入【羊山丨交流社区】</h2><p><img src="/img/icon/wechatFindMe.png" srcset="/img/loading.gif" alt="联系博主"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%BC%96%E7%A8%8B/IDEA/">IDEA</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/JetBrains/">JetBrains</a>
+                    
+                      <a class="hover-with-bg" href="/tags/IDEA/">IDEA</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均为原创。版权归博主小马所有。任何团体、机构、媒体、网站、公众号及个人不得转载。如需转载，请联系博主(关于页面)。如其他团体、机构、媒体、网站、博客或个人未经博主允许擅自转载使用，请自负版权等法律责任！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/11/22/IDEAPlugins/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">IntelliJ IDEA 插件 (小马多年血泪沉淀下来的)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/11/17/installationSystem/">
+                        <span class="hidden-mobile">最简单干净的系统安装教程(心血历程)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.staticfile.org/gitalk/1.7.0/gitalk.min.js', function () {
+        var gitalk = new Gitalk({
+          clientID: '61b738599506ef5e04c5',
+          clientSecret: '9e52e787ccd4549bf53cadeef0c9c46a1d3ce162',
+          repo: 'hexoBlogGitalk',
+          owner: 'xiaoma55',
+          admin: ["xiaoma55"],
+          id: 'ca1e05ca4d7275c36f4a8594742d3a86',
+          language: 'zh-CN',
+          labels: ["Gitalk"],
+          perPage: 10,
+          pagerDirection: 'first',
+          createIssueManually: true,
+          distractionFreeMode: true
+        });
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <i class="iconfont icon-love"></i> <a href="javascript:;" rel="nofollow noopener"><span>小马</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?67170173f7728b46e83d8bf815805a8b";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

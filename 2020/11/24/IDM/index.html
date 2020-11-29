@@ -1,0 +1,596 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/icon/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="小马哥哥">
+  <meta name="keywords" content="">
+  <title>IDM下载器 chrome安装（神器、神器、神器） - 羊山</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"xiaoma.cool","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":"67170173f7728b46e83d8bf815805a8b","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>羊 山</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/articleBg/1(12).jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="IDM下载器 chrome安装（神器、神器、神器）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      小马哥哥
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-11-24 02:29" pubdate>
+        2020年11月24日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      452 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">IDM下载器 chrome安装（神器、神器、神器）</h1>
+            
+            <div class="markdown-body">
+              <p>IDM（Internet Download Manager）是一款老牌下载器，用过的用户都知道，简直就是神器。可以接管浏览器一切下载，下载速度可以提升5-10倍，今天就来一波安利，坐稳了老铁们。</p>
+<a id="more"></a>
+
+<h2 id="1-软件下载"><a href="#1-软件下载" class="headerlink" title="1.软件下载"></a>1.软件下载</h2><p>大家去我网盘下载，内容是下面四个文件</p>
+<pre><code class="hljs awk">链接：https:<span class="hljs-regexp">//</span>pan.baidu.com<span class="hljs-regexp">/s/</span><span class="hljs-number">1</span>bbqCrzXDmpHBo65-QdX_Tw 
+提取码：<span class="hljs-number">6666</span> 
+复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V3的分享</code></pre>
+
+<p><img src="/img/articleContent/IDM/IDMDownload.png" srcset="/img/loading.gif" alt="IDMDownload"></p>
+<h2 id="2-软件安装"><a href="#2-软件安装" class="headerlink" title="2.软件安装"></a>2.软件安装</h2><h3 id="1-安装chrome"><a href="#1-安装chrome" class="headerlink" title="1.安装chrome"></a>1.安装chrome</h3><p>大家自己在网上下载chrome，建议下载最新的，太旧的版本可能安装不成功。</p>
+<p>已安装或者安装后先关闭chrome浏览器，建议大家严格按照我的步骤来，这样就稳得很呢，不然搞不成我可不管呢</p>
+<h3 id="2-安装IDM"><a href="#2-安装IDM" class="headerlink" title="2.安装IDM"></a>2.安装IDM</h3><p>执行图中【IDM安装.exe】文件</p>
+<p><img src="/img/articleContent/IDM/IDMDownload1.png" srcset="/img/loading.gif" alt="IDMDownload1"></p>
+<p>安装步骤就按下面图中来，记得建议选C盘，不然容易出问题</p>
+<p><img src="/img/articleContent/IDM/IDM0.png" srcset="/img/loading.gif" alt="IDM0"><br><img src="/img/articleContent/IDM/IDM1.png" srcset="/img/loading.gif" alt="IDM1"><br><img src="/img/articleContent/IDM/IDM2.png" srcset="/img/loading.gif" alt="IDM2"><br><img src="/img/articleContent/IDM/IDM3.png" srcset="/img/loading.gif" alt="IDM3"><br><img src="/img/articleContent/IDM/IDM4.png" srcset="/img/loading.gif" alt="IDM4"><br><img src="/img/articleContent/IDM/IDM4_1.png" srcset="/img/loading.gif" alt="IDM4_1"><br><img src="/img/articleContent/IDM/IDM4_2.png" srcset="/img/loading.gif" alt="IDM4_2"><br><img src="/img/articleContent/IDM/IDM4_3.png" srcset="/img/loading.gif" alt="IDM4_3"><br><img src="/img/articleContent/IDM/IDM4_4.png" srcset="/img/loading.gif" alt="IDM4_4"><br><img src="/img/articleContent/IDM/IDM4_5.png" srcset="/img/loading.gif" alt="IDM4_5"><br><img src="/img/articleContent/IDM/IDM5.png" srcset="/img/loading.gif" alt="IDM5"><br><img src="/img/articleContent/IDM/IDM5_1.png" srcset="/img/loading.gif" alt="IDM5_1"></p>
+<h2 id="3-IDM破解"><a href="#3-IDM破解" class="headerlink" title="3.IDM破解"></a>3.IDM破解</h2><p>先退出IDM</p>
+<p><img src="/img/articleContent/IDM/IDM6_0.png" srcset="/img/loading.gif" alt="IDM6_0"></p>
+<p>把图中3个文件复制到IDM的安装目录，一般是</p>
+<pre><code class="hljs livescript">C:<span class="hljs-string">\Program</span> Files (x86)<span class="hljs-string">\Internet</span> Download Manager<span class="hljs-string">\IDMan.exe</span></code></pre>
+
+<p><img src="/img/articleContent/IDM/IDMDownload4.png" srcset="/img/loading.gif" alt="IDMDownload4"></p>
+<h3 id="1-执行【破解补丁1-exe】"><a href="#1-执行【破解补丁1-exe】" class="headerlink" title="1.执行【破解补丁1.exe】"></a>1.执行【破解补丁1.exe】</h3><p><img src="/img/articleContent/IDM/IDMDownload2.png" srcset="/img/loading.gif" alt="IDMDownload2"></p>
+<p>进行破解，按下图操作</p>
+<p><img src="/img/articleContent/IDM/IDM6.png" srcset="/img/loading.gif" alt="IDM6"></p>
+<p><img src="/img/articleContent/IDM/IDM7.png" srcset="/img/loading.gif" alt="IDM7"></p>
+<h3 id="2-执行【破解补丁2-exe】"><a href="#2-执行【破解补丁2-exe】" class="headerlink" title="2.执行【破解补丁2.exe】"></a>2.执行【破解补丁2.exe】</h3><p><img src="/img/articleContent/IDM/IDMDownload3.png" srcset="/img/loading.gif" alt="IDMDownload3"></p>
+<p>进行破解，继续按下图操作</p>
+<p><img src="/img/articleContent/IDM/IDM8.png" srcset="/img/loading.gif" alt="IDM8"></p>
+<h2 id="4-IDM设置"><a href="#4-IDM设置" class="headerlink" title="4.IDM设置"></a>4.IDM设置</h2><p>按下面4个图走就好</p>
+<p><img src="/img/articleContent/IDM/IDM9.png" srcset="/img/loading.gif" alt="IDM9"><br><img src="/img/articleContent/IDM/IDM10.png" srcset="/img/loading.gif" alt="IDM10"><br><img src="/img/articleContent/IDM/IDM11.png" srcset="/img/loading.gif" alt="IDM11"><br><img src="/img/articleContent/IDM/IDM12.png" srcset="/img/loading.gif" alt="IDM12"></p>
+<h2 id="5-添加chrome扩展"><a href="#5-添加chrome扩展" class="headerlink" title="5.添加chrome扩展"></a>5.添加chrome扩展</h2><p>现在，我们打开浏览器，如下图，选择【启用扩展程序】</p>
+<p><img src="/img/articleContent/IDM/IDM13.png" srcset="/img/loading.gif" alt="IDM13"></p>
+<h2 id="6-成果检验"><a href="#6-成果检验" class="headerlink" title="6.成果检验"></a>6.成果检验</h2><p>至此，我们的安装就完成了。随便打开一个视频看下。</p>
+<p><img src="/img/articleContent/IDM/IDM14.png" srcset="/img/loading.gif" alt="IDM14"></p>
+<p>OK，成功了。可以下载浏览器几乎所有视频了。</p>
+<p>而且，idm接管了浏览器所有下载，下载速度飞起来了呢，大家快去体验一下吧。</p>
+<h2 id="联系博主，加入【羊山丨交流社区】"><a href="#联系博主，加入【羊山丨交流社区】" class="headerlink" title="联系博主，加入【羊山丨交流社区】"></a>联系博主，加入【羊山丨交流社区】</h2><p><img src="/img/icon/wechatFindMe.png" srcset="/img/loading.gif" alt="联系博主"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%BD%AF%E4%BB%B6/">软件</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%BD%AF%E4%BB%B6/">软件</a>
+                    
+                      <a class="hover-with-bg" href="/tags/IDM/">IDM</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Chrome/">Chrome</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均为原创。版权归博主小马所有。任何团体、机构、媒体、网站、公众号及个人不得转载。如需转载，请联系博主(关于页面)。如其他团体、机构、媒体、网站、博客或个人未经博主允许擅自转载使用，请自负版权等法律责任！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/11/25/VNwareOsCannotStart/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">记录一次VMWare无法启动虚拟机问题</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/11/23/CenosNetWorkSetting/">
+                        <span class="hidden-mobile">Cenos7 虚拟机网络配置 (让虚拟机访问因特网)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.staticfile.org/gitalk/1.7.0/gitalk.min.js', function () {
+        var gitalk = new Gitalk({
+          clientID: '61b738599506ef5e04c5',
+          clientSecret: '9e52e787ccd4549bf53cadeef0c9c46a1d3ce162',
+          repo: 'hexoBlogGitalk',
+          owner: 'xiaoma55',
+          admin: ["xiaoma55"],
+          id: '792ea8d94ba50256362dac8723101ce4',
+          language: 'zh-CN',
+          labels: ["Gitalk"],
+          perPage: 10,
+          pagerDirection: 'first',
+          createIssueManually: true,
+          distractionFreeMode: true
+        });
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <i class="iconfont icon-love"></i> <a href="javascript:;" rel="nofollow noopener"><span>小马</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?67170173f7728b46e83d8bf815805a8b";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
